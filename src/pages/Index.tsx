@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+import { CATALOG } from "@/data/catalog";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/77a7f189-c352-4cdc-9370-c01999b932a7.jpg";
 const COMPLEX_IMG = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/e57642a4-f99e-4bf1-8f5e-26173f054c76.jpg";
@@ -14,50 +16,6 @@ const NAV_ITEMS = [
   { id: "contacts", label: "Контакты" },
 ];
 
-const CATALOG_ITEMS = [
-  {
-    icon: "Dumbbell",
-    title: "Турники и брусья",
-    desc: "Профессиональные стойки из стали 40×40 мм с порошковым покрытием. Нагрузка до 200 кг.",
-    specs: ["Сталь Ст3", "Нагрузка 200 кг", "Покрытие: порошок"],
-    tag: "Популярное",
-  },
-  {
-    icon: "Activity",
-    title: "Воркаут-комплексы",
-    desc: "Многофункциональные площадки 6×6 м и 10×10 м. Для дворовых и парковых зон.",
-    specs: ["6×6 м / 10×10 м", "Монтаж 1–3 дня", "Гарантия 5 лет"],
-    tag: "Хит",
-  },
-  {
-    icon: "Target",
-    title: "Детские площадки",
-    desc: "Безопасные конструкции из оцинкованной стали. Соответствие ГОСТ Р 52169-2012.",
-    specs: ["ГОСТ Р 52169-2012", "Оцинкованная сталь", "Резиновое покрытие"],
-    tag: null,
-  },
-  {
-    icon: "Layers",
-    title: "Уличные тренажёры",
-    desc: "Эллипсы, степперы, жимы — вандалозащищённое исполнение для общественных мест.",
-    specs: ["Антивандальное", "Без обслуживания", "IP65"],
-    tag: null,
-  },
-  {
-    icon: "Zap",
-    title: "Боксёрские стойки",
-    desc: "Тяжёлые мешки, напольные груши — стационарные крепления на любое покрытие.",
-    specs: ["Бетонирование", "Нагрузка 150 кг", "Сталь 60×60 мм"],
-    tag: null,
-  },
-  {
-    icon: "Shield",
-    title: "Ограждения и покрытия",
-    desc: "Резиновая плитка 40–60 мм, заборчики, бордюры — полный комплекс обустройства.",
-    specs: ["40–60 мм толщина", "Цвета RAL", "Монтаж входит"],
-    tag: null,
-  },
-];
 
 const PORTFOLIO_ITEMS = [
   { city: "Москва", name: "ЖК «Северный парк»", area: "400 м²", year: "2024", img: HERO_IMG },
@@ -121,6 +79,7 @@ const STATS = [
 ];
 
 export default function Index() {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -264,9 +223,10 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CATALOG_ITEMS.map((item) => (
+            {CATALOG.map((item) => (
               <div
-                key={item.title}
+                key={item.slug}
+                onClick={() => navigate(`/catalog/${item.slug}`)}
                 className="group bg-white border border-[#e8e8e4] p-7 hover:border-[#f97316] hover:shadow-lg transition-all duration-300 cursor-pointer relative"
               >
                 {item.tag && (
@@ -278,9 +238,9 @@ export default function Index() {
                   <Icon name={item.icon} size={20} className="text-[#141414] group-hover:text-white transition-colors duration-200" />
                 </div>
                 <h3 className="font-display text-xl font-medium uppercase mb-3">{item.title}</h3>
-                <p className="font-body text-sm text-[#666] leading-relaxed mb-5">{item.desc}</p>
+                <p className="font-body text-sm text-[#666] leading-relaxed mb-5">{item.shortDesc}</p>
                 <ul className="flex flex-col gap-1.5">
-                  {item.specs.map((spec) => (
+                  {item.specs.slice(0, 3).map((spec) => (
                     <li key={spec} className="font-body text-xs text-[#888] flex items-center gap-2">
                       <span className="w-1 h-1 bg-[#f97316] rounded-full flex-shrink-0" />
                       {spec}
