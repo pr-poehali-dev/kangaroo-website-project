@@ -71,8 +71,13 @@ export default function CatalogCategory() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-          {/* LEFT: description + features */}
+          {/* LEFT: photo + description + features */}
           <div className="lg:col-span-1">
+            <img
+              src={category.img}
+              alt={category.title}
+              className="w-full aspect-[4/3] object-cover mb-8"
+            />
             <p className="font-body text-sm text-[#555] leading-loose mb-8">{category.fullDesc}</p>
 
             <h3 className="font-display text-lg font-medium uppercase mb-4">Характеристики</h3>
@@ -154,12 +159,20 @@ export default function CatalogCategory() {
               <button
                 key={cat.slug}
                 onClick={() => navigate(`/catalog/${cat.slug}`)}
-                className="group border border-[#e8e8e4] p-4 text-left hover:border-[#f97316] hover:shadow-md transition-all duration-200"
+                className="group border border-[#e8e8e4] text-left hover:border-[#f97316] hover:shadow-md transition-all duration-200 overflow-hidden"
               >
-                <div className="w-8 h-8 flex items-center justify-center bg-[#f6f6f4] group-hover:bg-[#f97316] transition-colors duration-200 mb-3">
-                  <Icon name={cat.icon} size={16} className="text-[#141414] group-hover:text-white transition-colors" />
+                <div className="relative overflow-hidden aspect-[4/3]">
+                  <img
+                    src={cat.img}
+                    alt={cat.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[#141414]/30 group-hover:bg-[#141414]/10 transition-colors" />
                 </div>
-                <span className="font-display text-sm font-medium uppercase leading-tight">{cat.title}</span>
+                <div className="p-3 flex items-center gap-2">
+                  <Icon name={cat.icon} size={14} className="text-[#f97316] flex-shrink-0" />
+                  <span className="font-display text-xs font-medium uppercase leading-tight">{cat.title}</span>
+                </div>
               </button>
             ))}
           </div>

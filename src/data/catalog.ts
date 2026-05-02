@@ -17,9 +17,12 @@ export interface CatalogCategory {
   features: { icon: string; text: string }[];
 }
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/77a7f189-c352-4cdc-9370-c01999b932a7.jpg";
-const COMPLEX_IMG = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/e57642a4-f99e-4bf1-8f5e-26173f054c76.jpg";
-const DETAIL_IMG = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/5b7d3d5b-cdf2-4e5e-a270-707ba3adf627.jpg";
+const IMG_TURNIKS = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/b4bc06a1-a6ea-4311-92cb-4ec34e1b812e.jpg";
+const IMG_WORKOUT = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/3f80da79-b913-4edc-8c53-5c26df0a7a40.jpg";
+const IMG_CHILDREN = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/0369d4c0-69da-4d60-9e8e-2d626ee249c4.jpg";
+const IMG_TRAINERS = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/115d83ba-7e12-4a7d-99f0-d6c62fab2e07.jpg";
+const IMG_BOXING = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/a51dd069-0396-4123-9bac-e01e84cfb546.jpg";
+const IMG_FENCING = "https://cdn.poehali.dev/projects/7ed97f7b-d903-45d9-b360-5838f20a94e0/files/e0e6cfe0-9ceb-43cb-b9e3-5056c6dc4987.jpg";
 
 export const CATALOG: CatalogCategory[] = [
   {
@@ -30,7 +33,7 @@ export const CATALOG: CatalogCategory[] = [
     fullDesc: "Турники и брусья АТЛЕТ изготавливаются из стальной профильной трубы 40×40×2 мм. Все металлические части проходят горячее цинкование и порошковую покраску в печи при 200°C. Ручки из нержавеющей стали или резинового грипа. Подходят для дворовых площадок, парков и учебных заведений.",
     specs: ["Сталь Ст3", "Нагрузка 200 кг", "Покрытие: порошок", "Горячее цинкование", "Заглушки из ПВХ"],
     tag: "Популярное",
-    img: DETAIL_IMG,
+    img: IMG_TURNIKS,
     features: [
       { icon: "Shield", text: "Антикоррозийная защита 15 лет" },
       { icon: "Wrench", text: "Монтаж за 1 день" },
@@ -53,7 +56,7 @@ export const CATALOG: CatalogCategory[] = [
     fullDesc: "Воркаут-комплексы АТЛЕТ — полностью укомплектованные спортивные зоны под ключ. Включают несколько зон: силовую, гимнастическую и функциональную. Рама из профиля 60×60×3 мм, покрытие — резиновая плитка 40 мм. Проектируем под любое пространство от 4×4 до 20×20 м.",
     specs: ["6×6 м / 10×10 м", "Монтаж 1–3 дня", "Гарантия 5 лет", "Сталь 60×60×3 мм", "Резиновое покрытие"],
     tag: "Хит",
-    img: COMPLEX_IMG,
+    img: IMG_WORKOUT,
     features: [
       { icon: "Layout", text: "Проект под ваш размер участка" },
       { icon: "Package", text: "Поставка под ключ" },
@@ -75,7 +78,7 @@ export const CATALOG: CatalogCategory[] = [
     fullDesc: "Детские площадки АТЛЕТ полностью соответствуют ГОСТ Р 52169-2012 и ТР ТС 042/2017. Все конструкции проходят сертификационные испытания. Оцинкованная сталь, закруглённые края, заглушки на всех трубах, резиновое покрытие 40 мм. Цвет — RAL по выбору заказчика.",
     specs: ["ГОСТ Р 52169-2012", "Оцинкованная сталь", "Резиновое покрытие", "ТР ТС 042/2017", "RAL цвета"],
     tag: null,
-    img: HERO_IMG,
+    img: IMG_CHILDREN,
     features: [
       { icon: "ShieldCheck", text: "Сертификат ГОСТ Р 52169-2012" },
       { icon: "Palette", text: "Любой цвет RAL" },
@@ -97,7 +100,7 @@ export const CATALOG: CatalogCategory[] = [
     fullDesc: "Уличные тренажёры АТЛЕТ — спортивное оборудование для парков и общественных пространств. Конструкции из стали 60×60×3 мм, все подшипниковые узлы защищены от пыли и воды (IP65). Не требуют смазки и технического обслуживания. Рассчитаны на круглогодичную эксплуатацию при температурах от −40 до +50°C.",
     specs: ["Антивандальное", "Без обслуживания", "IP65", "−40 до +50°C", "Подшипники закрытые"],
     tag: null,
-    img: DETAIL_IMG,
+    img: IMG_TRAINERS,
     features: [
       { icon: "Lock", text: "Антивандальные крепления" },
       { icon: "Thermometer", text: "Эксплуатация от −40°C" },
@@ -120,7 +123,7 @@ export const CATALOG: CatalogCategory[] = [
     fullDesc: "Боксёрские стойки АТЛЕТ изготавливаются под бетонирование или поверхностный монтаж. Рама из стали 60×60×3 мм, кронштейны из стали 10 мм. Поставляются без боксёрского мешка или в комплекте с грушей. Подходят для открытых тренировочных площадок, дворовых зон и спортивных клубов.",
     specs: ["Бетонирование", "Нагрузка 150 кг", "Сталь 60×60 мм", "Кронштейн 10 мм", "Мешок опционально"],
     tag: null,
-    img: COMPLEX_IMG,
+    img: IMG_BOXING,
     features: [
       { icon: "Anchor", text: "Бетонирование или поверхностный монтаж" },
       { icon: "Weight", text: "Нагрузка на подвес 150 кг" },
@@ -142,7 +145,7 @@ export const CATALOG: CatalogCategory[] = [
     fullDesc: "Ограждения и покрытия АТЛЕТ — завершающий элемент любой спортивной зоны. Резиновая плитка из переработанной крошки толщиной 40, 50 или 60 мм амортизирует падения и устойчива к морозу. Ограждения из профиля 40×20×2 мм, высота 0,5–1,2 м. Всё в единой цветовой гамме RAL по вашему проекту.",
     specs: ["40–60 мм толщина", "Цвета RAL", "Монтаж входит", "−50°C морозостойкость", "Из переработанной крошки"],
     tag: null,
-    img: HERO_IMG,
+    img: IMG_FENCING,
     features: [
       { icon: "Leaf", text: "Из переработанной резиновой крошки" },
       { icon: "Shield", text: "Амортизация падений до 1,5 м" },
