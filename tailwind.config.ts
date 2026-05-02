@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1777743443993740636.html"
 	],
 	prefix: "",
 	theme: {
